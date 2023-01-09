@@ -8,10 +8,12 @@
 import Foundation
 import Combine
 
+@available(macOS 10.15, *)
 public protocol FavoriteUseCase {
     func getFavorites() -> AnyPublisher<[CategoryModel], Error>
 }
 
+@available(macOS 10.15, *)
 public class FavoriteInteractor: FavoriteUseCase {
     private let repository: FavoriteRepositoryProtocol
 

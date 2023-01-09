@@ -10,6 +10,7 @@ import Combine
 import RealmSwift
 
 protocol FavoriteLocalDataSourceProtocol {
+    @available(macOS 10.15, *)
     func getFavorites() -> AnyPublisher<[FavoriteCategoryEntity], Error>
 }
 
@@ -26,6 +27,7 @@ final class FavoriteLocalDataSource: NSObject {
 }
 
 extension FavoriteLocalDataSource: FavoriteLocalDataSourceProtocol {
+    @available(macOS 10.15, *)
     func getFavorites() -> AnyPublisher<[FavoriteCategoryEntity], Error> {
         return Future<[FavoriteCategoryEntity], Error> { completion in
             if let realm = self.realm {

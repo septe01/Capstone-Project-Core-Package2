@@ -10,6 +10,7 @@ import RealmSwift
 import Combine
 
 
+@available(macOS 10.15, *)
 protocol CategoryLocalDataSourceProtocol {
     func getCategories() -> AnyPublisher<[CategoryEntity], Error>
     func addCategories(from categories: [CategoryEntity]) -> AnyPublisher<Bool, Error>
@@ -33,6 +34,7 @@ final class CategoryLocalDataSource: NSObject {
 
 
 // CategoryLocalDataSource interface CategoryLocalDataSourceProtocol
+@available(macOS 10.15, *)
 extension CategoryLocalDataSource: CategoryLocalDataSourceProtocol{
 
     // get local category

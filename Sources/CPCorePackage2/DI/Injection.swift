@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 
+@available(macOS 10.15, *)
 public final class Injection: NSObject {
     private func provideRepositoryCategory() -> CategoryRepositoryProtocol {
         let realm = try? Realm()
@@ -35,6 +36,7 @@ public final class Injection: NSObject {
     }
 }
 
+@available(macOS 10.15, *)
 extension Injection {
     private func provideRepositoryProfile() -> ProfileRepositoryProtocol {
 
@@ -49,6 +51,7 @@ extension Injection {
     }
 }
 
+@available(macOS 10.15, *)
 extension Injection {
 
     private func provideRepositoryFavorite() -> FavoriteRepositoryProtocol {

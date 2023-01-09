@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@available(macOS 10.15, *)
 protocol CategoryRepositoryProtocol {
     func getCategories() -> AnyPublisher<[CategoryModel], Error>
     func addFavorite(category: CategoryModel) -> AnyPublisher<Bool, Error>
@@ -34,6 +35,7 @@ final class CategoryRepository: NSObject {
 }
 
 
+@available(macOS 10.15, *)
 extension CategoryRepository: CategoryRepositoryProtocol {
 
     // manipulation data source

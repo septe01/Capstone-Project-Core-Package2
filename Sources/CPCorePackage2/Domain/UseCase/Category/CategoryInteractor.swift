@@ -9,12 +9,14 @@ import Foundation
 import Combine
 
 // create protocol usecase category
+@available(macOS 10.15, *)
 public protocol CategoryUseCase {
     func getCategories() -> AnyPublisher<[CategoryModel], Error>
     func handleFavorite(category: CategoryModel, type: String) -> AnyPublisher<Bool, Error>
 }
 
 // create class interactor category for get categories in repository
+@available(macOS 10.15, *)
 public class CategoryInteractor: CategoryUseCase {
 
     private let repository: CategoryRepositoryProtocol

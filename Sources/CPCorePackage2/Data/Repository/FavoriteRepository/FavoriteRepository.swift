@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@available(macOS 10.15, *)
 protocol FavoriteRepositoryProtocol {
     func getFavorites() -> AnyPublisher<[CategoryModel], Error>
 }
@@ -27,6 +28,7 @@ final class FavoriteRepository: NSObject {
     }
 }
 
+@available(macOS 10.15, *)
 extension FavoriteRepository: FavoriteRepositoryProtocol {
     func getFavorites() -> AnyPublisher<[CategoryModel], Error> {
         return localFavorite.getFavorites()

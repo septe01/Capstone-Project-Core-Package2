@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import Combine
 
+@available(macOS 10.15, *)
 protocol CategoryRemoteDataSourceProtocol {
     func getCategories() -> AnyPublisher<[CategoryResponse], Error>
 }
@@ -19,6 +20,7 @@ final class CategoryRemoteDataSource: NSObject {
     static let sharedInstance: CategoryRemoteDataSource = CategoryRemoteDataSource()
 }
 
+@available(macOS 10.15, *)
 extension CategoryRemoteDataSource: CategoryRemoteDataSourceProtocol {
     func getCategories() -> AnyPublisher<[CategoryResponse], Error> {
         return Future<[CategoryResponse], Error> { completion in

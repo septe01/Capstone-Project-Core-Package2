@@ -13,6 +13,7 @@ public protocol CategoryDetailUseCase {
 }
 
 // create interactor detail
+@available(macOS 10.15, *)
 public class CategoryDetailInteractor: CategoryDetailUseCase {
 
 

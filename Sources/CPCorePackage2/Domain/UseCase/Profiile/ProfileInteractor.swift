@@ -8,12 +8,14 @@
 import Foundation
 import Combine
 
+@available(macOS 10.15, *)
 public protocol ProfileUseCase {
 
     func getProfiles() -> AnyPublisher<ProfileModel, Error>
 
 }
 
+@available(macOS 10.15, *)
 public class ProfileInteractor: ProfileUseCase {
 
     private let repository: ProfileRepositoryProtocol

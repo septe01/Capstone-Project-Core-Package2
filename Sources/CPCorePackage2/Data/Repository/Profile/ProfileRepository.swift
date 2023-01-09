@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@available(macOS 10.15, *)
 protocol ProfileRepositoryProtocol {
     func getProfiles() -> AnyPublisher<ProfileModel, Error>
 }
@@ -28,6 +29,7 @@ final class ProfileRepository: NSObject {
 
 }
 
+@available(macOS 10.15, *)
 extension ProfileRepository: ProfileRepositoryProtocol {
     func getProfiles() -> AnyPublisher<ProfileModel, Error> {
         return self.remote.getProfiles()

@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import Combine
 
+@available(macOS 10.15, *)
 protocol ProfileDataSourceProtocol {
 
     func getProfiles() -> AnyPublisher<ProfileResponse, Error>
@@ -23,6 +24,7 @@ final class ProfileDataSource: NSObject {
 
 }
 
+@available(macOS 10.15, *)
 extension ProfileDataSource: ProfileDataSourceProtocol {
     func getProfiles() -> AnyPublisher<ProfileResponse, Error> {
         return Future<ProfileResponse, Error> { completion in
