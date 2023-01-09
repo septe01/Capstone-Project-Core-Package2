@@ -15,8 +15,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(name: "Alamo", url: "https://github.com/Alamofire/Alamofire.git", branch: "master"),
-        .package(name: "Realm", url: "https://github.com/realm/realm-swift", branch: "master")
+        .package(url: "https://github.com/realm/realm-swift", branch: "master"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", branch: "master"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -24,8 +24,8 @@ let package = Package(
         .target(
             name: "CPCorePackage2",
             dependencies: [
-                .product(name: "RealmSwift", package: "Realm"),
-                .product(name: "Alamofire", package: "Alamo")
+                .product(name: "RealmSwift", package: "realm-swift"),
+                .product(name: "Alamofire", package: "Alamofire")
             ]),
         .testTarget(
             name: "CPCorePackage2Tests",
